@@ -328,3 +328,31 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
   .footer__col:nth-child(4) { grid-column: span 2; }
   .hero__ctas .btn { flex: 1; padding-inline: 12px; }
 }
+
+/* Touch devices (phones, tablets): no hover, so always show quick-add sizes
+   and avoid fixed backgrounds, which iOS Safari does not support */
+@media (hover: none) {
+  .card__quick { transform: none; }
+  .statement { background-attachment: scroll; }
+}
+
+/* Very small phones (iPhone SE 1st gen, Galaxy Fold) */
+@media (max-width: 360px) {
+  .btn { white-space: normal; text-align: center; padding: 12px 18px; }
+  .split__body { padding: 32px 16px; }
+  .hero__ctas { flex-direction: column; }
+  .tab { padding: 8px 12px; }
+  .sizes { gap: 3px; }
+  .sizes button { min-width: 0; padding: 0; font-size: 10px; }
+  .grid-4, .cats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer__main { grid-template-columns: 1fr; }
+  .footer__brand, .footer__news, .footer__col:nth-child(4) { grid-column: auto; }
+  .news-form { flex-direction: column; gap: 8px; }
+}
+
+/* Large / ultrawide screens: keep content at a readable width */
+.section > *, .perks, .footer__main, .footer__bottom { max-width: 1680px; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 360px) {
+  .announce__track p { font-size: 10px; letter-spacing: .06em; padding: 0 8px; text-align: center; }
+}
