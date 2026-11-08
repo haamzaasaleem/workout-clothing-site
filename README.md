@@ -13,6 +13,7 @@ npx serve .
 
 ## Structure
 - `index.html`: page markup and sections
+- `images/logo.png`: brand logo, used in the header, mobile menu and footer. If it is missing, the text logo is shown instead.
 - `css/styles.css`: all styles. Brand colors and fonts are CSS variables at the top (`--accent`, `--display`, …)
 - `js/products.js`: product catalogue and reviews. Edit names, prices and images here.
 - `js/main.js`: product rendering, tabs, carousel, cart drawer (saved in localStorage), search, mobile menu, review slider
