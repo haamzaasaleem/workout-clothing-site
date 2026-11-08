@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FORGD | Performance Training Apparel</title>
+  <meta name="description" content="FORGD — performance training apparel built for the grind. Tees, hoodies, joggers, leggings and accessories." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Announcement bar ===== -->
+  <div class="announce">
+    <div class="announce__track" id="announceTrack">
+      <p class="is-active">Free shipping on orders over $100</p>
+      <p>New drop: The Iron Collection is live</p>
+      <p>Buy 2 tees, get the 3rd 50% off</p>
+    </div>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <button class="icon-btn header__burger" id="burger" aria-label="Open menu">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <nav class="nav" aria-label="Main">
+        <div class="nav__item has-mega">
+          <a href="#shop">Men</a>
+          <div class="mega">
+            <div class="mega__inner">
+              <div class="mega__col">
+                <h4>Tops</h4>
+                <a href="#">Short Sleeves</a><a href="#">Long Sleeves</a><a href="#">Tanks</a><a href="#">Hoodies</a><a href="#">Quarter Zips</a><a href="#">Jackets</a>
+              </div>
+              <div class="mega__col">
+                <h4>Bottoms</h4>
+                <a href="#">Shorts</a><a href="#">Joggers</a><a href="#">Training Pants</a><a href="#">Sweatpants</a>
+              </div>
+              <div class="mega__col">
+                <h4>Featured</h4>
+                <a href="#">New Arrivals</a><a href="#">Best Sellers</a><a href="#">The Iron Collection</a><a href="#">Bundles</a>
+              </div>
+              <a class="mega__promo" href="#iron">
+                <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=70" alt="Athlete training in a FORGD top" loading="lazy" />
+                <span>The Iron Collection &rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="nav__item has-mega">
+          <a href="#shop">Women</a>
+          <div class="mega">
+            <div class="mega__inner">
+              <div class="mega__col">
+                <h4>Tops</h4>
+                <a href="#">Sports Bras</a><a href="#">Crop Tops</a><a href="#">Tanks</a><a href="#">Hoodies</a><a href="#">Half Zips</a>
+              </div>
+              <div class="mega__col">
+                <h4>Bottoms</h4>
+                <a href="#">Leggings</a><a href="#">Bike Shorts</a><a href="#">Joggers</a><a href="#">Skorts</a>
+              </div>
+              <div class="mega__col">
+                <h4>Featured</h4>
+                <a href="#">New Arrivals</a><a href="#">Matching Sets</a><a href="#">Sculpt Collection</a><a href="#">Best Sellers</a>
+              </div>
+              <a class="mega__promo" href="#sets">
+                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=70" alt="Athlete in a matching set" loading="lazy" />
+                <span>Matching Sets &rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="nav__item"><a href="#shop">Accessories</a></div>
+        <div class="nav__item"><a href="#iron">Collections</a></div>
+        <div class="nav__item"><a href="#shop" class="nav__sale">Sale</a></div>
+      </nav>
+
+      <a href="#" class="logo" aria-label="FORGD home">FORGD<span>.</span></a>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <a class="icon-btn hide-sm" href="#" aria-label="Account">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        </a>
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart">
+          <svg viewBox="0 0 24 24"><path d="M5 7h14l-1 13H6L5 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Search overlay ===== -->
+  <div class="search" id="search" aria-hidden="true">
+    <div class="search__box">
+      <input type="search" id="searchInput" placeholder="Search tees, hoodies, leggings..." />
+      <button class="icon-btn" id="searchClose" aria-label="Close search">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="search__results" id="searchResults"></div>
+  </div>
+
+  <!-- ===== Mobile menu ===== -->
+  <aside class="drawer drawer--left" id="mobileMenu" aria-hidden="true">
+    <div class="drawer__head">
+      <span class="logo">FORGD<span>.</span></span>
+      <button class="icon-btn" data-close aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <nav class="mobile-nav">
+      <details><summary>Men</summary><a href="#shop">Tops</a><a href="#shop">Bottoms</a><a href="#shop">New Arrivals</a><a href="#iron">The Iron Collection</a></details>
+      <details><summary>Women</summary><a href="#shop">Sports Bras</a><a href="#shop">Leggings</a><a href="#sets">Matching Sets</a><a href="#shop">New Arrivals</a></details>
+      <a href="#shop">Accessories</a>
+      <a href="#iron">Collections</a>
+      <a href="#shop" class="nav__sale">Sale</a>
+      <a href="#">My Account</a>
+    </nav>
+  </aside>
+
+  <!-- ===== Cart drawer ===== -->
+  <aside class="drawer drawer--right" id="cartDrawer" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Your Cart</h3>
+      <button class="icon-btn" data-close aria-label="Close cart"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="ship-meter">
+      <p id="shipText">You're $100.00 away from free shipping</p>
+      <div class="ship-meter__bar"><span id="shipBar"></span></div>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="drawer__foot">
+      <div class="cart-total"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>
+      <button class="btn btn--dark btn--block">Checkout</button>
+      <p class="tiny">Taxes and shipping calculated at checkout.</p>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <img class="hero__img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=2000&q=75" alt="Gym floor with dumbbells" />
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <p class="eyebrow">Fall / Winter 26 &mdash; Training Layers</p>
+        <h1>Built For<br />The Grind</h1>
+        <div class="hero__ctas">
+          <a href="#shop" class="btn btn--light">Shop Men</a>
+          <a href="#shop" class="btn btn--outline-light">Shop Women</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Best sellers carousel with tabs ===== -->
+    <section class="section" id="shop">
+      <div class="section__head">
+        <h2 class="title">Best Sellers</h2>
+        <div class="tabs" role="tablist" data-tabs="best">
+          <button class="tab is-active" data-filter="men">Men</button>
+          <button class="tab" data-filter="women">Women</button>
+          <button class="tab" data-filter="acc">Accessories</button>
+        </div>
+        <div class="carousel-arrows">
+          <button class="arrow" data-dir="-1" data-target="bestTrack" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button>
+          <button class="arrow" data-dir="1" data-target="bestTrack" aria-label="Next"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="carousel" id="bestTrack"></div>
+    </section>
+
+    <!-- ===== Split feature banner ===== -->
+    <section class="split" id="iron">
+      <div class="split__media">
+        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=1400&q=75" alt="Athlete lifting a barbell" loading="lazy" />
+      </div>
+      <div class="split__body">
+        <p class="eyebrow">New Collection</p>
+        <h2 class="display">The Iron<br />Collection</h2>
+        <p>Heavyweight cotton-blend fleece, dropped shoulders and reinforced seams. Made for the heavy days, and every day after.</p>
+        <a href="#ironGrid" class="btn btn--dark">Shop The Collection</a>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="grid-4" id="ironGrid"></div>
+    </section>
+
+    <!-- ===== Parallax statement banner ===== -->
+    <section class="statement" style="--bg:url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=2000&q=75')">
+      <div class="statement__content">
+        <p class="eyebrow">Limited Drop</p>
+        <h2 class="display">No Days<br />Off Club</h2>
+        <p>A capsule for the early risers and late lifters. Once it's gone, it's gone.</p>
+        <a href="#dropGrid" class="btn btn--light">Shop The Drop</a>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="grid-2" id="dropGrid"></div>
+    </section>
+
+    <!-- ===== Category tiles ===== -->
+    <section class="section">
+      <div class="section__head section__head--center">
+        <h2 class="title">Shop By Category</h2>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#shop"><img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=70" alt="Black tee on hanger" loading="lazy" /><span>Tees &amp; Tanks</span></a>
+        <a class="cat" href="#shop"><img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=70" alt="Grey hoodie" loading="lazy" /><span>Hoodies</span></a>
+        <a class="cat" href="#shop"><img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800&q=70" alt="Runner in leggings" loading="lazy" /><span>Leggings</span></a>
+        <a class="cat" href="#shop"><img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&q=70" alt="White cap" loading="lazy" /><span>Accessories</span></a>
+      </div>
+    </section>
+
+    <!-- ===== Marquee ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Train Hard</span><span>&#9733;</span><span>Recover Harder</span><span>&#9733;</span><span>Stay Forgd</span><span>&#9733;</span>
+        <span>Train Hard</span><span>&#9733;</span><span>Recover Harder</span><span>&#9733;</span><span>Stay Forgd</span><span>&#9733;</span>
+        <span>Train Hard</span><span>&#9733;</span><span>Recover Harder</span><span>&#9733;</span><span>Stay Forgd</span><span>&#9733;</span>
+        <span>Train Hard</span><span>&#9733;</span><span>Recover Harder</span><span>&#9733;</span><span>Stay Forgd</span><span>&#9733;</span>
+      </div>
+    </div>
+
+    <!-- ===== Second featured banner (women's sets) ===== -->
+    <section class="banner" id="sets">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=2000&q=75" alt="Women training together" loading="lazy" />
+      <div class="banner__content">
+        <p class="eyebrow">Women's</p>
+        <h2 class="display">Sculpt Sets</h2>
+        <a href="#setsGrid" class="btn btn--light">Shop Sets</a>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="section__head">
+        <div class="tabs" data-tabs="sets">
+          <button class="tab is-active" data-filter="all">All</button>
+          <button class="tab" data-filter="bras">Sports Bras</button>
+          <button class="tab" data-filter="leggings">Leggings</button>
+        </div>
+      </div>
+      <div class="grid-4" id="setsGrid"></div>
+    </section>
+
+    <!-- ===== Wide banner with left text ===== -->
+    <section class="hero hero--short">
+      <img class="hero__img" src="https://images.unsplash.com/photo-1530143311094-34d807799e8f?w=2000&q=75" alt="Trail runner on a hill" loading="lazy" />
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <p class="eyebrow">Run Club</p>
+        <h2 class="display">Go The<br />Extra Mile</h2>
+        <div class="hero__ctas"><a href="#newGrid" class="btn btn--light">Shop Run</a></div>
+      </div>
+    </section>
+
+    <!-- ===== New arrivals ===== -->
+    <section class="section">
+      <div class="section__head">
+        <h2 class="title">New Arrivals</h2>
+        <a href="#shop" class="link-arrow">See all &rarr;</a>
+      </div>
+      <div class="grid-4" id="newGrid"></div>
+    </section>
+
+    <!-- ===== Perks ===== -->
+    <section class="perks">
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+        <h4>Free Shipping</h4><p>On all orders over $100</p>
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg>
+        <h4>30-Day Returns</h4><p>Wear it, test it, love it</p>
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg>
+        <h4>Built To Last</h4><p>Reinforced, sweat-tested fabrics</p>
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6L3.4 9.3l6-.7z"/></svg>
+        <h4>Rewards</h4><p>Earn points on every order</p>
+      </div>
+    </section>
+
+    <!-- ===== Reviews ===== -->
+    <section class="section reviews">
+      <div class="section__head section__head--center">
+        <h2 class="title">The Reviews Are In</h2>
+        <p class="sub">4.8 / 5 from 12,000+ athletes</p>
+      </div>
+      <div class="reviews__track" id="reviewsTrack"></div>
+      <div class="dots" id="reviewDots"></div>
+    </section>
+
+    <!-- ===== Social grid ===== -->
+    <section class="social">
+      <div class="section__head section__head--center">
+        <h2 class="title title--light">Tag Us #StayForgd</h2>
+        <a href="#" class="link-arrow link-arrow--light">@forgd.athletics</a>
+      </div>
+      <div class="social__grid">
+        <a href="#"><img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&q=70" alt="" loading="lazy" /></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=70" alt="" loading="lazy" /></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=600&q=70" alt="" loading="lazy" /></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1483721310020-03333e577078?w=600&q=70" alt="" loading="lazy" /></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&q=70" alt="" loading="lazy" /></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=600&q=70" alt="" loading="lazy" /></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__perks">
+      <p><strong>Join Forgd Rewards</strong> Earn points on every order</p>
+      <p><strong>Find A Store</strong> 40+ retail partners</p>
+      <p><strong>Free Returns</strong> Within 30 days</p>
+    </div>
+    <div class="footer__main">
+      <div class="footer__brand">
+        <span class="logo logo--light">FORGD<span>.</span></span>
+        <p>Performance training apparel built for the grind. Designed by athletes, tested in the gym.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11a4 4 0 1 1-4-4"/><path d="M14 3c.5 3 2.5 5 5 5"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Shop</h4><a href="#">Men</a><a href="#">Women</a><a href="#">Accessories</a><a href="#">New Arrivals</a><a href="#">Sale</a>
+      </div>
+      <div class="footer__col">
+        <h4>Help</h4><a href="#">Contact Us</a><a href="#">Shipping</a><a href="#">Returns &amp; Exchanges</a><a href="#">Size Guide</a><a href="#">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4><a href="#">Our Story</a><a href="#">Athletes</a><a href="#">Careers</a><a href="#">Wholesale</a>
+      </div>
+      <div class="footer__news">
+        <h4>Join The Team</h4>
+        <p>Get 10% off your first order, early access to drops and training tips.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="Email address" required aria-label="Email address" />
+          <button class="btn btn--light" type="submit">Sign Up</button>
+        </form>
+        <p class="tiny" id="newsMsg"></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> FORGD Athletics. All rights reserved.</p>
+      <div><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a></div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
